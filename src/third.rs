@@ -15,13 +15,13 @@ impl<T> List<T> {
     pub fn new() -> Self {
         List { head: None }
     }
-}
 
-pub fn prepend(&self, elem: T) -> List<T> {
-    List {
-        head: Some(Rc::new(Node {
-            elem: elem,
-            next: self.head.clone(),
-        })),
+    pub fn prepend(&self, elem: T) -> List<T> {
+        List {
+            head: Some(Rc::new(Node {
+                elem: elem,
+                next: self.head.clone(),
+            })),
+        }
     }
 }
